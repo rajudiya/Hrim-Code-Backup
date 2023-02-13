@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<table border="1px">
+		<thead>
+			<tr>
+				<th>IMPORTANT TIPS</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<label>Download Zip File From The Server To Local </label>
+				</td>
+				<td>
+					<b>=></b>
+				</td>
+				<td>scp m23@5.189.145.212:public_html/app/Rohan2.zip /var/www/html/</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Creating Zip File in Server </label>
+				</td>
+				<td>
+					<b>=></b>
+				</td>
+				<td>zip -r app/Rohan2.zip vendor/magento/module-shipping/</td>
+			</tr>
+			<tr>
+				<td>
+					<label>send filr from local to server </label>
+				</td>
+				<td>
+					<b>=></b>
+				</td>
+				<td>scp ssh /var/www/html/Andytools/Live/andytools-data-dump-database-backup.sql m2@5.189.145.212:public_html/andytools_10223/app/</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
