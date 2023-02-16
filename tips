@@ -1,50 +1,9 @@
- 1. Change Ragistrarion.php file Path => /public_html/app/code/WeltPixel/OwlCarouselSlider/registration.php : Custome_Mail to 					   WeltPixel_OwlCarouselSlider
+1.	Download Zip File From The Server To Local 
+	=> 	scp m23@5.189.145.212:public_html/app/Rohan2.zip /var/www/html/
 
- 2. Weiget Error Exception #0 (InvalidArgumentException): Required parameter 'theme_dir' was not passed <= 
- 	Sholv Change File path => /public_htmlvendor/magento/framework/View/Design/Fallback/Rule/Simple.php
- 	Changes => public function getPatternDirs(array $params)
-			    {
-			        $pattern = $this->pattern;
-			        if (preg_match_all('/<([a-zA-Z\_]+)>/', $pattern, $matches)) {
-			            foreach ($matches[1] as $placeholder) {
-			                if (empty($params[$placeholder])) {
-			                    if (in_array($placeholder, $this->optionalParams)) {
-			                        return [];
-			                    } else {
-			                        throw new \InvalidArgumentException("Required parameter '{$placeholder}' was not passed");
-			                    }
-			                }
-			                $pattern = str_replace('<' . $placeholder . '>', $params[$placeholder], $pattern);
-			            }
-			        }
-			        return [$pattern];
-			    }
-	To
-				public function getPatternDirs(array $params)
-			    {
-			        $pattern = $this->pattern;
-			        if (preg_match_all('/<([a-zA-Z\_]+)>/', $pattern, $matches)) {
-			            foreach ($matches[1] as $placeholder) {
-			                if (empty($params[$placeholder])) {
-			                    if (in_array($placeholder, $this->optionalParams)) {
-			                        return [];
-			                    } else {
-			                        return [];
-			                        //throw new \InvalidArgumentException("Required parameter '{$placeholder}' was not passed");
-			                    }
-			                }
-			                $pattern = str_replace('<' . $placeholder . '>', $params[$placeholder], $pattern);
-			            }
-			        }
-			        return [$pattern];
-			    }
+2.	Creating Zip File in Server
+	=>	zip -r app/Rohan2.zip vendor/magento/module-shipping/
 
+3. 	send filr from local to server
+	=>	scp ssh /var/www/html/Andytools/Live/andytools-data-dump-database-backup.sql m2@5.189.145.212:public_html/andytools_10223/app/
 
-=> Download Zip File From The Server To Local =>  scp m23@5.189.145.212:public_html/app/Rohan2.zip /var/www/html/
-
-=> Creating Zip File in Server =>  zip -r app/Rohan2.zip vendor/magento/module-shipping/
-
-
-
-
-access for kishan bhai date 08 feb => http://handytools.co.uk/
